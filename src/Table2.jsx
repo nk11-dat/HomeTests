@@ -2,23 +2,29 @@ import React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 
 const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
+  { 
+    field: 'id',
+    headerName: 'ID',
+    width: 70,
+    // Here I make a onclick eventhandler
+    renderCell: (params) => (
+        <div
+          onClick={() => {
+            // Handle the click event here
+            alert(`Cell clicked: ${params.row.age}`);
+          }}
+        >
+          {params.value}
+        </div>
+    ),
+  },
   { field: 'firstName', headerName: 'First Name', width: 130 },
   { field: 'lastName', headerName: 'Last Name', width: 130 },
   {
     field: 'age',
     headerName: 'Age',
     width: 90,
-    // renderCell: (row) => (
-    //     <div
-    //       onClick={() => {
-    //         // Handle the click event here
-    //         alert(`Cell clicked: ${row.age}`);
-    //       }}
-    //     >
-    //       {row.age}
-    //     </div>
-    // ),
+    // Here I make a onclick eventhandler
     renderCell: (params) => (
       <div
         onClick={() => {

@@ -15,7 +15,9 @@ function App() {
         {/* <Table1 /> */}
       </div>
       <div className='materialui-table'>
-        {/* <Table2 /> */}
+        <p>Table2's onclick virker...</p>
+        <Table2 />
+        <p>MinimalExample's onclick virker ikke...</p>
         <MinimalExample />
       </div>
       <div className='tanstack-table'>
